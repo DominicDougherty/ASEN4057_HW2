@@ -1,0 +1,26 @@
+Marissa Palamara and Dominic Dougherty
+ASEN 4057 - HW 2 Part 2 Write up
+Due: 4 February 2022
+“Profiler_summary.pdf” shows the first page of results from the profiler summary. If you wish to
+see every result, the rest are in screenshots labeled “profile_summary_part<#>.png”. I could not
+get MATLAB to print the full summary, it would only print the first page. We have included the full
+printout-out for main_v2.m titled “main_script_printout.pdf” which will hopefully cover in detail
+everything about the entire program. We have included both the busiest functions, which are not
+the main script, as well as the busiest non-MATLAB functions since the busiest function is
+fminsearch. I thought it would be interesting to look at the busiest custom-made functions as
+well. Their respective names are of the form “busiest_function_profile.pdf” and
+“nonMATLAB_busiest_profile.pdf”.
+The most important results:
+We think the most important results from the MATLAB profiler, file name
+“profiler_summary.pdf”, is that fminsearch takes a lot of time. In fact, it takes almost all of the
+program’s runtime at 99.2% of the program’s runtime. This is very obviously the reason for the
+slow performance of the program. In terms of the busiest non-MATLAB function, our function
+titled “optFunc.m” was the busiest function. This was mostly due to the ode45 call within the
+function which took up 98.6% of the function’s runtime. I think the lesson here is that numerical
+propagation and optimization just takes a long time! It’s almost certainly faster than hand-coded
+for-loops, but it still takes a long time.
+Potential Modifications:
+If one doesn’t need super precise results, one could always use the Euler method
+instead of ode45 to improve runtime. It has a set time-step unlike ode45 which calculates the
+time steps each loop, and it can be coded up in just a few lines whereas the ode45 is a function
+call to a very long function each time

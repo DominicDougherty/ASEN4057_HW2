@@ -280,3 +280,15 @@ git add Assignments
 git status
 ls
 clear
+ls
+cd Assignments
+git add --all
+git commit -am "Directory Structure"
+ls
+rm ASEN4057
+rm -r ASEN4057
+rm hello_world
+ls
+git add Assignments
+git commit -m "First test"
+git push
